@@ -62,6 +62,14 @@ These conventions apply to any variant with a reversed suit (cards must be playe
 - Similar to *5 Color Ejection*, it is also possible to perform a *1 Color Ejection* on a reversed suit.
 - 1CE works in the exact same way that 5CE does (e.g. players use the "two or more blind-plays" rule).
 
+### 1's Chop Move
+
+- Normally, when someone gives a number 1 clue, and all the 1's are played on the stacks, it communicates a *Trash Chop Move*.
+- In a variant with a reversed suit, we agree that players can also perform this move by using a reversed 1, as a *1's Chop Move* (which is similar to a *5's Chop Move)*.
+- In this situation, the player who receives the clue should *Chop Move* their cards to the right of the 1 and also keep the 1 as a (potential) reversed 1.
+  - If they happen to see the real copy of the reversed 1 at a later point in the game, then they can discard the 1 as known trash.
+- If there are two or more cards are touched from *1's Chop Move*, the reversed 1 is promised on the right-most.
+
 ### The Turnabout Ejection (For 1s)
 
 - [Turnabout Ejections](https://github.com/Zamiell/hanabi-conventions/blob/master/variant-specific/Pink.md#the-turnabout-ejection-for-1s-and-5s) can be performed on a reversed 1 in the same way that they can on a pink 5.

@@ -26,7 +26,7 @@ The main [reference document](../Reference.md) lists all of our conventions. But
   - Bob plays slot 1 as red 1.
 - Why does this seem logical? The reason is that a big part of Hanabi is discarding and waiting patiently for playable cards to be drawn. When a new playable card is drawn, it is usually immediately given a clue. So interpreting *Play Clues* as being focused on the card that was just drawn makes a lot of sense.
 - This "left-most" logic applies for most of the game. But notice that this logic does not apply to the opening hand. A playable card in the opening hand is **equally likely to be in any slot at all**, since the deck was shuffled randomly. So that explains why it is not necessarily "correct" to play 1's in the starting hand from left-to-right. But is it actually beneficial to play the 1's from right-to-left instead?
-- The Hyphen-ated group closely follows *[Good Touch Principle](https://github.com/Zamiell/hanabi-conventions/blob/master/Reference.md#4-good-touch-principle)*. A common problem with *Good Touch Principle* is when one player has two copies of the same card in their hand. Even if the card is playable right now (e.g. a red 1), cluing it would be a no-no, since it would violate *Good Touch Principle*.
+- The Hyphen-ated group closely follows *[Good Touch Principle](https://github.com/Zamiell/hanabi-conventions/blob/master/Reference.md#4-good-touch-principle)*. A common problem with *Good Touch Principle* is when one player has two copies of the same card in their hand. Even if the card is playable right now (e.g. a red 1), cluing it would be a no-no, since it would be a *Bad Touch*.
 - Instead, the typical strategy is to do nothing and patiently wait for that player to discard. Eventually, the player will discard the first copy of the card, allowing the remaining copy to be clued in a "clean" way.
 - So, what about the inverse? What about when players do **not** patiently wait for a discard and instead clue two or more 1's immediately? The player who receives the clue knows that out of all of the 1s, the most important 1 must be the chop card (or the card closest to chop). Otherwise, if it were a "bad" 1, then the team would do nothing and let it get discarded!
 - It follows that players should always play 1's in the starting hand from right-to-left.
@@ -37,3 +37,25 @@ The main [reference document](../Reference.md) lists all of our conventions. But
 
 - In the Hyphen-ated convention framework, we extend the [Bluff](../Reference.md#bluffs) convention, allowing players to *Bluff* with [any 3 that they want](https://github.com/Zamiell/hanabi-conventions/blob/master/Reference.md#the-3-bluff). Why?
 - Read the [story of 3 Bluffs](3_Bluffs.md), which is on a separate page.
+
+<br />
+
+### Discarding Trash From Left to Right
+
+- In the Hyphen-ated convention framework, [we discard known trash from left-to-right](https://github.com/Zamiell/hanabi-conventions/blob/master/Reference.md#the-trash-order-chop-move). Why?
+- Intuitively, you would expect that trash should be discarded from right-to-left, because that is the order that we normally discard cards in.
+- However, this does not work well if you use the *Trash Finesse* convention and it gets deferred.
+- For example, examine the following replay: https://hanabi.live/replay/16627#32
+  - On turn 32, from xdragun's perspective, Zamiel's clue can be either a *Play Clue* on the purple 1 or a *Trash Finesse*.
+  - On turn 34, from xdragun's perspective, it is possible that Libster deferred playing into the *Trash Finesse* in order to perform a *Bluff* of his own. Thus, the card is still in a superposition of these two possibilities.
+
+| Convention Decision | Real Card Identity | Card Identity Assumed | xdragun will   | Outcome
+| ------------------- | ------------------ | --------------------- | -------------- | -------
+| discard leftmost    | purple 1           | purple 1              | discard slot 1 | *Gentleman's Discard* ✔
+| discard leftmost    | purple 1           | trash 1               | discard slot 1 | attempted normal discard that turns into a *Gentleman's Discard* ✔
+| discard leftmost    | trash 1            | purple 1              | discard slot 1 | attempted normal discard that turns into a *Gentleman's Discard* ✔
+| discard leftmost    | trash 1            | trash 1               | discard slot 1 | normal discard, nothing special happens ✔
+| discard rightmost   | purple 1           | purple 1              | discard slot 1 | *Gentleman's Discard* ✔
+| discard rightmost   | purple 1           | trash 1               | discard slot 3 | attempted normal discard that turns into a *Trash Order Chop Move* on Libster ❌
+| discard rightmost   | trash 1            | purple 1              | discard slot 1 | attempted normal discard that turns into a *Trash Order Chop Move* on Libster ❌
+| discard rightmost   | trash 1            | trash 1               | discard slot 3 | normal discard, nothing special happens ✔

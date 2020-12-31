@@ -6,99 +6,19 @@ As noted in the [convention changes document](Convention_Changes.md), sometimes 
 
 ## The Backlog (General Conventions)
 
-**The Safety Charm (Declined 5 Pull)** (by pianoblook)
-
-```
-- This convention only applies in the *Low Score Phase*.
-- If a card could be freely gotten by initiating a *5 Pull*, it would be very strange if the *5 Pull* was declined and the card was directly touched as a 1-for-1.
-- When this occurs, this player is trying to communicate something deeper - a *Charm* on the very next player.
-- Normally, when an card is blind-played after an innocent-looking *Play Clue*, the clue receiver knows to not play that card anymore. In this situation, since the *Fourth Finesse Position* card was played instead of the *First*, *Second*, or *Third*, the clue receiver will know that their card is still playable **and** that the unclued card directly to its left must be a 5.
-- This untouched 5 is now globally known; everyone on the team should treat it as a *Chop Moved* card.
-- For example, in a 4-player game:
-  - Red 1 is played on the stacks.
-  - It is the *Early Game* and the *Low Score Phase*.
-  - Alice clues red to Cathy, touching a new red 2 on slot 2.
-  - Cathy hand is, from newest to oldest: `blue 5, red 2, blue 3, blue 2`
-  - Bob sees that Alice could have cleanly *5 Pulled* Cathy's red 2. (It is globally known that Alice had another *Play Clue* to give, so a number 5 clue would not have been interpreted as a *5 Stall*.)
-  - Bob knows that this signals a blind-play:
-    - A *First Finesse Position* blind-play would look like a *Bluff* on a red 2 or a red 3, which would be a lie.
-    - A *Second Finesse Position* blind-play would look like a *5 Color Ejection* on a red 5, which would be a lie.
-    - A *Third Finesse Position* blind-play would look like an *Unknown Trash Discharge* on a red 1, which would be a lie.
-  - Thus, Bob knows that this must be a *Safety Charm*. He blind-plays his *Fourth Finesse Position*. It is a blue 1 and it successfully plays.
-  - Cathy knows that she must have the red 2. She also knows that her slot 1 card is a 5 that could have been used for a *5 Pull*. Cathy marks the 5 as being *Chop Moved* for later.
-- More examples of a *Safety Charm* can be found [here](https://github.com/Zamiell/hanabi-conventions/blob/master/examples/Safety_Charm.md).
-```
+n/a
 
 <br />
 
 ## The Backlog (Variant-Specific Conventions)
 
-@everyone Variant-specific conventions:
-
-**Order Chop Move Change**
-
-```
-- This convention applies to the "Dual-Color (6 Suits)" variant.
-- Normally, *Order Chop Moves*, are "turned off" when two different 1's have different positive clues on them.
-  - For example, Order Chop Moves would be "turned off" in the situation where Alice has one 1 has a positive 1 clue on it, and Alice has another 1 with a positive 1 clue on it and a positive red clue on it.
-- In the "Dual Color (6 Suit)" variant, *Order Chop Moves* are never turned off when there are two different 1's, regardless of different positive or negative color clues on them.
-- The only exception is when the exact identity of the 1 is known (e.g. from being completely "filled in"). In this situation, *Order Chop Moves* are turned off.
-```
-
-**Advanced Conventions for Variant with No Positive Clues**
-
-```
-- Various conventions for Duck have been deleted / reformulated.
-- We now have a framework that is used for any variant with no positive clues (e.g. Extremely Ambiguous, Duck, etc.).
-- For more information, please see: https://github.com/Zamiell/hanabi-conventions/blob/master/variant-specific/No_Positive_Clues.md
-```
-
-**Null Color Positional Clue Skips** (by Jeff)
-
-```
-- This convention only applies to variants with a null suit.
-- When determining the slot number of a *Null Positional Clue* that uses a color, you are now supposed to skip over any card with one or more positive clues on it. (But do not skip over the card if it is considered "untouched" from a *Positional Clue*.)
-- For example, in a 3-player game of the "Null (5 Suits)" variant:
-  - All the 1's are played on the stacks except for the null 1.
-  - Bob hand is as follows, from newest to oldest: `red 1, red 1, null 1, blue 1, blue 5`
-  - Bob's blue 5 has a number 5 clue on it. (It was clued with a *5 Save* earlier on.)
-  - Alice clues green to Cathy, touching a green 1.
-  - Bob knows that normally, this would be an *Unknown Trash Discharge*. But all *Discharges* are "turned off" in null variants. Instead, this must be a *Null Positional Clue*.
-  - Bob knows that if his hand was completely unclued, green would refer to slot 4, since there are 5 slots in the hand and green is the 2nd rightmost color. But since Bob's slot 5 card already has a clue on it, he should skip over that card. So this must be targeting his slot 3 (e.g. his 2nd rightmost unclued slot).
-  - Bob blind-plays null 1 from slot 3.
-```
-
-**Null Color Positional Clue Wraparound** (by Jeff)
-
-```
-- This convention only applies to variants with a null suit.
-- *Color Positional Clues* always "wrap around" to the oldest card.
-- For example, in a 3-player game of the "Null (5 Suits)" variant:
-  - All the 1's are played on the stacks except for the null 1.
-  - Bob hand is as follows, from newest to oldest: `null 1, red 1, red 5, blue 5, green 5`
-  - All of Bob's 5's have a number 5 clue on them. (They were clued with a *5 Save* earlier on.)
-  - Alice clues red to Cathy, touching a red 1.
-  - Bob knows that normally, this would be an *Unknown Trash Discharge*. But all *Discharges* are "turned off" in null variants. Instead, this must be a *Null Positional Clue*.
-  - Bob knows that if his hand was completely unclued, red would refer to slot 2, since there are 5 slots in the hand and red is the 4th rightmost color. But since Bob's slot 3, slot 4, and slot 5 card already have a clue on it, he should skip over those cards.
-  - This means that blue would target slot 2 and green would target slot 1. Yellow would target slot 2 again (because of the wraparound) and red would target slot 1.
-  - Bob blind-plays null 1 from slot 1.
-```
-
-**The Scream Blind-Play (Blind-Playing Chop)** (for null)
-
-```
-- This convention only applies to variants with a null suit.
-- Sometimes, a player will have two critical cards in a row on chop. Usually, the team will work together to clue both of the cards. However, in variants with a null suit, it is sometimes difficult to do this.
-- In cases where one player needs to save two cards at once, they can perform a *Scream Blind-Play* by blind-playing their chop card. This is similar to a *Scream Discard*, except it *Chop Moves* two cards instead of one.
-- Just like the *Scream Discard*, the *Scream Blind-Play* is only to be used as a last resort. This should be obvious, since it uses up a strike.
-```
-
-**Muddy Rainbow Choice Tempo Clues** (by Jeff)
+**Mud Clues** (by Jeff)
 
 ```
 - This convention only applies to variants with a muddy rainbow suit.
 - In variants with a pink suit, the *Pink Choice Tempo Clue* convention is "turned on", since players often have a *Free Choice* with how they can clue pink cards. Muddy rainbow has a similar convention.
 - When one or more muddy rainbow cards are retouched with a color clue, and there are no "new" cards introduced (or, if the only "new" cards introduced are trash), then extra information can be conveyed by what color is chosen. The color chosen should correspond to the slot that they should play.
+- This is called a *Muddy Rainbow Choice Tempo Clue*, or just a *Mud Clue* for short.
 - The slot number is calculated in roughly the same way that *Null Color Positional Clues* are calculated. In short, the slot number corresponds to the ordering of the colors **from right to left**. But skip the cards that are not touched by the color clue. Furthermore, colors always "wrap around" to the oldest card.
 - For example, in a 3-player game of the "Muddy Rainbow (6 Suits)" variant:
   - All of the 2's are played on the stacks.
@@ -112,10 +32,10 @@ As noted in the [convention changes document](Convention_Changes.md), sometimes 
   - An exception to this rule can be made for extremely difficult variants. If the team needs to get a non-muddy card for some specific purpose (e.g. to "unlock" another player), and there was not another good way to "get" the card, then it should be clear to everyone what is happening.
 ```
 
-**Muddy Rainbow Choice Tempo Clues (Skipping Over Unplayable Cards)** (by Jeff)
+**Mud Clues (Skipping Over Unplayable Cards)** (by Jeff)
 
 ```
-- If known-unplayable cards are touched as part of a *Muddy Rainbow Choice Tempo Clue*, then they should be skipped over.
+- If known-unplayable cards are touched as part of a *Mud Clue*, then they should be skipped over.
 - For example, in a 3-player game of the "Muddy Rainbow (6 Suits)" variant:
   - All of the 2's are played on the stacks.
   - Bob has two muddy rainbow cards clued in his hand on slot 2 and slot 4. He does not know the rank of either card. He also has a red 5 on slot 3 with a 5 clue on it.
@@ -127,26 +47,6 @@ As noted in the [convention changes document](Convention_Changes.md), sometimes 
   - A yellow clue would mean to play slot 2 (skipping over the red 5 again).
   - A red clue would mean to play slot 4 (another wraparound).
   - Bob plays slot 4 as the muddy rainbow 3.
-```
-
-**Bubblegum Wraparound**
-
-```
-- This convention applies to any variant with a pink suit.
-- When players violate *Pink Promise* on an unplayable pink card, it usually indicates a *Bubblegum Prompt* or a *Bubblegum Finesse* (with the rank corresponding to the slot number to play).
-- In 4-player and 5-player games, there are only 4 cards in the hand. If a player does a *Bubblegum Finesse* with a 5, then that would be nonsensical, since there is no slot 5.
-- Similarly, in a 6-player game, there are only 3 cards in the hand. If a player does a *Bubblegum Finesse* with a 4, then that would be nonsensical, since there is no slot 4.
-- In this situation, it should "wraparound" to slot 1, communicating that the first slot is playable.
-- This kind of thing is useful in some edge-case scenarios (e.g. helping satisfy *Good Touch Principle* in variants with a light pink suit).
-```
-
-**Bubblegum Slides**
-
-```
-- This convention applies to any variant with a pink suit.
-- If a *Bubblegum Prompt* or a *Bubblegum Finesse* is telling a player to play a card in a slot that has negative pink, then that is nonsensical.
-- In this situation, if there is no other possible interpretation for the clue other than a *Bubblegum Prompt* or a *Bubblegum Finesse*, and it is unlikely for the cluer to be making a mistake, then the target slot should "slide" to the right.
-- If the slot immediately to the right is also impossible to be a pink card, then it should continue to slide right until it finds a pink card, wrapping around to the other side of the hand if necessary.
 ```
 
 **The Slot Finesse** (by Jeff)
